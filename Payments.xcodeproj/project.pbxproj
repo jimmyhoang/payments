@@ -12,6 +12,7 @@
 		FF4BC6971EE1F65D004A74D7 /* PaypalPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC6961EE1F65D004A74D7 /* PaypalPaymentService.m */; };
 		FF4BC69A1EE1F676004A74D7 /* StripePaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC6991EE1F676004A74D7 /* StripePaymentService.m */; };
 		FF4BC69D1EE1F683004A74D7 /* AmazonPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC69C1EE1F683004A74D7 /* AmazonPaymentService.m */; };
+		FF4BC6A01EE1FEEB004A74D7 /* ApplePaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC69F1EE1FEEB004A74D7 /* ApplePaymentService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		FF4BC6991EE1F676004A74D7 /* StripePaymentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StripePaymentService.m; sourceTree = "<group>"; };
 		FF4BC69B1EE1F683004A74D7 /* AmazonPaymentService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonPaymentService.h; sourceTree = "<group>"; };
 		FF4BC69C1EE1F683004A74D7 /* AmazonPaymentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonPaymentService.m; sourceTree = "<group>"; };
+		FF4BC69E1EE1FEEB004A74D7 /* ApplePaymentService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplePaymentService.h; sourceTree = "<group>"; };
+		FF4BC69F1EE1FEEB004A74D7 /* ApplePaymentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplePaymentService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				FF4BC6991EE1F676004A74D7 /* StripePaymentService.m */,
 				FF4BC69B1EE1F683004A74D7 /* AmazonPaymentService.h */,
 				FF4BC69C1EE1F683004A74D7 /* AmazonPaymentService.m */,
+				FF4BC69E1EE1FEEB004A74D7 /* ApplePaymentService.h */,
+				FF4BC69F1EE1FEEB004A74D7 /* ApplePaymentService.m */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				FF4BC68C1EE1EFA8004A74D7 /* main.m in Sources */,
 				FF4BC69D1EE1F683004A74D7 /* AmazonPaymentService.m in Sources */,
 				FF4BC6941EE1F575004A74D7 /* PaymentGateway.m in Sources */,
+				FF4BC6A01EE1FEEB004A74D7 /* ApplePaymentService.m in Sources */,
 				FF4BC6971EE1F65D004A74D7 /* PaypalPaymentService.m in Sources */,
 				FF4BC69A1EE1F676004A74D7 /* StripePaymentService.m in Sources */,
 			);

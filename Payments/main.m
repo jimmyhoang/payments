@@ -11,6 +11,7 @@
 #import "PaypalPaymentService.h"
 #import "StripePaymentService.h"
 #import "AmazonPaymentService.h"
+#import "ApplePaymentService.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -18,6 +19,7 @@ int main(int argc, const char * argv[]) {
         PaypalPaymentService* paypal;
         StripePaymentService* stripe;
         AmazonPaymentService* amazon;
+        ApplePaymentService* apple;
         
         
         int cartTotal = arc4random_uniform(900) + 100;
@@ -29,6 +31,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"1: Paypal");
         NSLog(@"2: Stripe");
         NSLog(@"3: Amazon");
+        NSLog(@"4: Apple Pay");
         
         // Get user input
         NSLog(@"> ");
@@ -62,6 +65,13 @@ int main(int argc, const char * argv[]) {
                     amazon = [[AmazonPaymentService alloc] init];
                 }
                 paymentGateway.paymentDelegate = amazon;
+                break;
+            }
+            case 4: {
+                if (!apple) {
+                    apple = [[ApplePaymentService alloc] init];
+                }
+                paymentGateway.paymentDelegate = apple;
                 break;
             }
 
