@@ -22,11 +22,11 @@ int main(int argc, const char * argv[]) {
         ApplePaymentService* apple;
         
         
-        int cartTotal = arc4random_uniform(900) + 100;
+        double cartTotal = arc4random_uniform(900) + 100;
         
         // Display total to user, ask for payment type
         NSLog(@"Thanks for shopping at Acme.com");
-        NSLog(@"Your total today is: $%d", cartTotal);
+        NSLog(@"Your total today is: $%f", cartTotal);
         NSLog(@"Please select your payment option:");
         NSLog(@"1: Paypal");
         NSLog(@"2: Stripe");
