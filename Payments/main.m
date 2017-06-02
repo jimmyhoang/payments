@@ -8,14 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "PaymentGateway.h"
+#import "PaypalPaymentService.h"
+#import "StripePaymentService.h"
+#import "AmazonPaymentService.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        PaymentGateway* paymentGateway = [[PaymentGateway alloc] init];
+        PaypalPaymentService* paypal;
+        StripePaymentService* stripe;
+        AmazonPaymentService* amazon;
+        
+        
         int cartTotal = arc4random_uniform(900) + 100;
         
         // Display total to user, ask for payment type
         NSLog(@"Thanks for shopping at Acme.com");
-        NSLog(@"Your total today is: %d", cartTotal);
+        NSLog(@"Your total today is: $%d", cartTotal);
         NSLog(@"Please select your payment option:");
         NSLog(@"1: Paypal");
         NSLog(@"2: Stripe");
@@ -29,10 +38,37 @@ int main(int argc, const char * argv[]) {
         // Convert user input string to int
         NSString* inputString = [[NSString alloc] initWithUTF8String:str];
         int userInput = [inputString intValue];
-        PaymentGateway* paymentGateway = [[PaymentGateway alloc] init];
-        [paymentGateway processPaymentAmount:userInput];
         
-        NSLog(@"%d", userInput);
+        
+        // Determine which payment service to used based on user input
+        // Initialize that payment service if it hasn't been already
+        switch (userInput) {
+            case 1: {
+                if (!paypal) {
+                    paypal = [[PaypalPaymentService alloc] init];
+                }
+                paymentGateway.paymentDelegate = paypal;
+                break;
+            }
+            case 2: {
+                if (!stripe) {
+                    stripe = [[StripePaymentService alloc] init];
+                }
+                paymentGateway.paymentDelegate = stripe;
+                break;
+            }
+            case 3: {
+                if (!amazon) {
+                    amazon = [[AmazonPaymentService alloc] init];
+                }
+                paymentGateway.paymentDelegate = amazon;
+                break;
+            }
+
+        }
+        
+        // Process payment
+        [paymentGateway processPaymentAmount:cartTotal];
         
     }
     return 0;

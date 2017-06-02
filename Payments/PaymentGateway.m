@@ -12,6 +12,12 @@
 
 -(void)processPaymentAmount:(NSInteger)amount {
     
+    if ([self.paymentDelegate canProcessPayment]) {
+        [self.paymentDelegate processPaymentAmount:amount];
+    } else  {
+        NSLog(@"Sorry our services are down right now");
+    }
+    
 }
 
 @end

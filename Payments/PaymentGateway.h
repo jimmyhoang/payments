@@ -13,7 +13,7 @@
 @interface PaymentGateway : NSObject
 
 
-@property (nonatomic, weak) id <PaymentGatewayDelegate> delegate;
+@property (nonatomic, weak) id <PaymentGatewayDelegate> paymentDelegate;
 
 -(void)processPaymentAmount:(NSInteger)amount;
 
@@ -22,6 +22,7 @@
 @protocol PaymentGatewayDelegate <NSObject>
 
 -(void)processPaymentAmount:(NSInteger)amount;
+-(BOOL)canProcessPayment;
 
 
 @end
